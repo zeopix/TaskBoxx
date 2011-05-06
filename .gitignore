@@ -2,3 +2,5 @@
 */cache/*
 web/uploads/*
 web/bundles/*
+nbproject/
+web/web.config
