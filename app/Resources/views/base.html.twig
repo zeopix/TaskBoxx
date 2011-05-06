@@ -1,13 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}TaskBoxx{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="wrapper">
+            <div id="top-menu">
+                <div id="account">
+                    
+                </div>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Timesheet</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Administration</a></li>
+                </ul>
+            </div>
+            <div id="header">
+                <div id="quick-search">
+                    
+                </div>
+                <h1>
+                    TaskBoxx
+                </h1>
+                {% block mainmenu %} {% endblock %}
+            </div>
+
+            <div id="main" {% block sidebarclass %}{% endblock %} >
+                <div id="sidebar">{% block sidebar %}{% endblock %}</div>
+                <div id="content">
+                    {% block contexutual %}{% endblock %}
+                    <?php endif; ?>
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            <div id="footer">
+                {% block footer %}{% endblock %}
+            </div>
+        </div>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
