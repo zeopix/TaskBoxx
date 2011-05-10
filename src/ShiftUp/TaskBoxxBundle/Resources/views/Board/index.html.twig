@@ -1,0 +1,21 @@
+{% extends 'ShiftUpTaskBoxxBundle::layout.html.twig' %}
+
+{% block body %}
+<h2>Board</h2>
+
+<table>
+    <thead>
+        <tr>
+            {% for column in columns %}
+                <th>{{ column.name }}</th>
+            {% endfor %}
+        <tr>
+    </thead>
+</table>
+
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+    <h3>Filter</h3>
+{% endblock %}

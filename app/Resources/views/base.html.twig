@@ -10,36 +10,47 @@
         <div id="wrapper">
             <div id="top-menu">
                 <div id="account">
-                    
+                    {% if app.user %}
+                        <ul>
+                            <li><a class="my-account" href="{{ path('taskboxx_account_show') }}">My account</a></li>
+                            <li><a class="logout" href="{{ path('taskboxx_logout') }}">Sign out</a></li>
+                        </ul>
+                    {% endif %}
                 </div>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Timesheet</a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Administration</a></li>
-                </ul>
+                
+                {% if app.user %}
+                    <div id="loggedas">
+                        Logged in as <a href="">{{ app.user.username }}</a>
+                    </div>
+                {% endif %}
+
             </div>
             <div id="header">
-                <div id="quick-search">
-                    
-                </div>
                 <h1>
                     TaskBoxx
                 </h1>
-                {% block mainmenu %} {% endblock %}
+                <div id="main-menu">
+                    <ul>
+                        <li><a class="overview {{ app.request.attributes.get('_route') == 'homepage' ? 'selected' : '' }}" href="{{ path('homepage') }}">Board</a></li>
+                        <li><a class="activity" href="{{ path('taskboxx_activity_index') }}">Activity</a></li>
+                        <li><a class="roadmap" href="{{ path('taskboxx_statistic_index') }}">Statistic</a></li>
+                        {% if app.user and is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('taskboxx_admin_index') }}">Administration</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
 
-            <div id="main" {% block sidebarclass %}{% endblock %} >
+            <div id="main" {% block sidebarclass %} {% endblock %} >
                 <div id="sidebar">{% block sidebar %}{% endblock %}</div>
                 <div id="content">
-                    {% block contexutual %}{% endblock %}
+                    {% block contextual %}{% endblock %}
                     <?php endif; ?>
                     {% block body %}{% endblock %}
                 </div>
             </div>
             <div id="footer">
-                {% block footer %}{% endblock %}
+                Powered by <a href="https://github.com/thaberkern/TaskBoxx" target="_blank">TaskBoxx</a> V.0.1.0
             </div>
         </div>
 

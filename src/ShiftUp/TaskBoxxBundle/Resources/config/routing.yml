@@ -1,3 +1,31 @@
 homepage:
     pattern:  /
-    defaults: { _controller: ShiftUpTaskBoxxBundle:Default:index }
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Board:index }
+    
+taskboxx_account_show:
+    pattern: /account/show
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Account:show }
+
+taskboxx_admin_index:
+    pattern: /admin
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Admin:index }
+
+taskboxx_statistic_index:
+    pattern: /statistic
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Statistic:index }
+
+taskboxx_activity_index:
+    pattern: /activity
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Activity:index }
+
+taskboxx_login:
+    pattern: /login
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Security:login }
+
+taskboxx_logout:
+    pattern: /logout
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Security:logout }
+
+_security_check:
+    pattern: /login_check
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Security:securityCheck }
