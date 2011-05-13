@@ -736,3 +736,125 @@ h2 img { vertical-align:middle; }
 	color:#069;
 }
 
+.board-column { list-style-type: none; margin: 0; padding: 0; float: left; margin-right: 10px; }
+
+.board-table { 
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
+.board-table thead th { 
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.board-table tfoot th { 
+    border-top: 1px solid #CCCCCC;
+    background-color: #ECECEC;
+}
+
+.board-table tfoot td { 
+    border-top: 1px solid #CCCCCC;
+}
+
+.board-column-name {
+    background-color: #ECECEC;
+    color: #666666;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 2px 6px;
+}
+
+.board-colum-items {
+    padding: 10px;
+    height: 400px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.board-item-container {
+    margin: 0 5px 5px 5px; 
+    padding: 5px; 
+    font-size: 1.0em; 
+    width: 100%; 
+    border: 1px solid #CDCDCD; 
+    color: #363636;
+    min-height: 50px;
+    cursor: move;
+    width: 150px;
+    position: relative;
+    float: left;
+}
+
+.board-item-header {  
+    padding: 3px;
+}
+
+.board-item-header-owner {
+    margin-bottom: 4px;
+    position: relative;
+}
+.board-item-header-owner img {
+    border: 1px solid #CDCDCD; 
+}
+
+.board-item-header-prio {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    font-size: 8pt;
+    font-weight: bold;
+    height: 20px;
+    padding-top: 4px;
+    text-align: center;
+    width: 32px;
+    background-color: #f6f7f8;
+    vertical-align: middle;
+}
+
+.prio-1 {
+    background-image: url(/bundles/shiftuptaskboxx/images/prio1.png) 0 10;
+    background-color: #ff0000;
+    color: white;
+}
+.prio-2 {
+    background-image: url(/bundles/shiftuptaskboxx/images/prio2.png);
+}
+.prio-3 {
+    background-image: url(/bundles/shiftuptaskboxx/images/prio3.png);
+}
+.prio-4 {
+    background-image: url(/bundles/shiftuptaskboxx/images/prio4.png);
+}
+.prio-5 {
+    background-image: url(/bundles/shiftuptaskboxx/images/prio5.png);
+}
+
+.board-item-header-expand {
+    cursor: pointer;
+}
+
+.board-item-header-title {
+    font-size: 0.85em;
+}
+
+.board-item-description {
+    display: none;
+}
+
+.board-item-num-comments {
+    position: absolute;
+    left: 32px;
+    top: 8px;
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    font-size: 8pt;
+    font-weight: bold;
+    height: 20px;
+    padding-top: 4px;
+    text-align: center;
+    width: 20px;
+    background-color: #e0e0e0;
+    vertical-align: middle;
+}

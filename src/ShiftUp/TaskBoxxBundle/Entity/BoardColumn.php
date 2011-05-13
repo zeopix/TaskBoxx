@@ -6,7 +6,7 @@ namespace ShiftUp\TaskBoxxBundle\Entity;
  * ShiftUp\TaskBoxxBundle\Entity\BoardColumn
  *
  * @orm:Table(name="tb_board_column")
- * @orm:Entity
+ * @orm:Entity(repositoryClass="ShiftUp\TaskBoxxBundle\Repository\BoardColumnRepository")
  */
 class BoardColumn
 {
@@ -44,6 +44,11 @@ class BoardColumn
      * @var type 
      */
     protected $backlogItems;
+    /**
+     * @orm:Column(type="integer")
+     * @var integer $sort_order
+     */
+    protected $sort_order;
 
     /**
      * Get id
@@ -103,6 +108,16 @@ class BoardColumn
     public function setBacklogItems($backlogItems)
     {
         $this->backlogItems = $backlogItems;
+    }
+
+    public function getSortOrder()
+    {
+        return $this->sort_order;
+    }
+
+    public function setSortOrder($sort_order)
+    {
+        $this->sort_order = $order;
     }
 
 }

@@ -1,0 +1,16 @@
+{% for item in column.backlogItems %}
+    <div class="board-item-container" style="background-color: {{ item.type.color }}">
+        <div class="board-item-header">
+            <div class="board-item-header-owner">
+                <img src="{{ gravatar(app.user.email, 20) }}" title="{{ app.user.username}}" />
+            </div>                
+            <a href="#" title="Kommentare" class="board-item-num-comments">{{ item.comments | length }}</a>
+            <div class="board-item-header-prio prio-{{ item.priority }}">
+                {{ item.priority }}
+            </div>  
+        </div>
+        <div class="board-item-header-title">
+            {{ item.name | markdown }}
+        </div>
+    </div>
+{% endfor %}

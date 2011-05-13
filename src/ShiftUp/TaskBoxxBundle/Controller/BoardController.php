@@ -10,9 +10,17 @@ class BoardController extends Controller
     {
         $em = $this->get('doctrine.orm.entity_manager');
         $columns = $em->getRepository('ShiftUpTaskBoxxBundle:BoardColumn')
-                        ->findAll();    
+                        ->getColumnsInOrder();    
         
         return $this->render('ShiftUpTaskBoxxBundle:Board:index.html.twig',
                                 array('columns'=>$columns));
+    }
+    
+    public function showColumnAction($columnId)
+    {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $column = $em->find('ShiftUpTaskBoxxBundle:BoardColumn', $columnId);
+        
+        return $this->render('ShiftUpTaskBoxxBundle:Board:showColumn.html.twig', array('column'=>$column));
     }
 }

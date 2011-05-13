@@ -3,14 +3,42 @@
 {% block body %}
 <h2>Board</h2>
 
-<table>
+<table class="board-table" cellspacing="0">
     <thead>
         <tr>
             {% for column in columns %}
-                <th>{{ column.name }}</th>
+                <th class="board-column-name" width="10%">{{ column.name }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for column in columns %}
+                <th class="board-column-wip {{ (column.backlogItems | length > column.wipLimit) and column.wipLimit > 0 ? 'exeedsLimit' : '' }}">{{ column.wipLimit == 0 ? 'no limit' : column.wipLimit }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for column in columns %}
+                <td boardcolumn="{{ column.id }}" wiplimit="{{ column.wipLimit }}" 
+                    hardlimitcheck="{{ column.hardLimitCheck ? 1 : 0 }}" 
+                    class="board-column-items {{ cycle(['odd', 'even'], loop.index) }}">
+                    {% render "ShiftUpTaskBoxxBundle:Board:showColumn" with {'columnId': column.id, 'filter': app.request.attributes.get('filter')} %}
+                </td>
             {% endfor %}
         <tr>
-    </thead>
+    </tbody>
+    <tfoot>
+        <tr>
+            {% for column in columns %}
+                <th class="{{ cycle(['odd', 'even'], loop.index) }}">Description</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for column in columns %}
+                <td  class="board-column-description {{ cycle(['odd', 'even'], loop.index) }}">{{ column.description | markdown }}</td>
+            {% endfor %}
+        </tr>
+    </tfoot>
 </table>
 
 {% endblock %}

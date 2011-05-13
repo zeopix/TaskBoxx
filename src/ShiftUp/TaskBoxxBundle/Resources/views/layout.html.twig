@@ -4,3 +4,9 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('bundles/shiftuptaskboxx/css/main.css') }}" type="text/css" media="all" />
 {% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/shiftuptaskboxx/js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/shiftuptaskboxx/js/jquery-ui.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/shiftuptaskboxx/js/taskboxx_board.js') }}" type="text/javascript"></script>
+{% endblock %}
