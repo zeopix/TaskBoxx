@@ -9,6 +9,7 @@
     <body>
         <div id="wrapper">
             <div id="top-menu">
+                
                 <div id="account">
                     {% if app.user %}
                         <ul>
@@ -24,20 +25,23 @@
                     </div>
                 {% endif %}
 
+                <ul>
+                    <li><a href="{{ path('homepage') }}">Home</a></li>
+                    <li><a href="{{ path('taskboxx_project_list') }}">Projects</a></li>
+                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                        <li><a href="{{ path('taskboxx_admin_index') }}">Administration</a></li>
+                    {% endif %}
+                </ul>
             </div>
             <div id="header">
                 <h1>
-                    TaskBoxx
+                    TaskBoxx {% block projectname %}{% endblock %}
                 </h1>
                 <div id="main-menu">
-                    <ul>
-                        <li><a class="overview {{ app.request.attributes.get('_route') == 'homepage' ? 'selected' : '' }}" href="{{ path('homepage') }}">Board</a></li>
-                        <li><a class="activity" href="{{ path('taskboxx_activity_index') }}">Activity</a></li>
-                        <li><a class="roadmap" href="{{ path('taskboxx_statistic_index') }}">Statistic</a></li>
-                        {% if app.user and is_granted('ROLE_ADMIN') %}
-                            <li><a href="{{ path('taskboxx_admin_index') }}">Administration</a></li>
-                        {% endif %}
-                    </ul>
+                    {% block mainmenu %}{% endblock %}
+                </div>
+                <div id="quick-search">
+                    {% render "ShiftUpTaskBoxxBundle:Project:quickSearchList" %}
                 </div>
             </div>
 

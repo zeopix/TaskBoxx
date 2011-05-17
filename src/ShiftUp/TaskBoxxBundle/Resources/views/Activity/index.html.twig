@@ -1,5 +1,13 @@
 {% extends 'ShiftUpTaskBoxxBundle::layout.html.twig' %}
 
+{% block projectname %}{{ project ? '- ' ~ project.name : '' }}{% endblock %}
+    
+{% block mainmenu %}
+    {% if (project) %}
+        {% include 'ShiftUpTaskBoxxBundle::mainmenu.html.twig' %}
+    {% endif %}
+{% endblock %}
+
 {% block body %}
 <h2>Activity</h2>
 {% endblock %}

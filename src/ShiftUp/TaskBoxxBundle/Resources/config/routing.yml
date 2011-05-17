@@ -10,14 +10,6 @@ taskboxx_admin_index:
     pattern: /admin
     defaults: { _controller: ShiftUpTaskBoxxBundle:Admin:index }
 
-taskboxx_statistic_index:
-    pattern: /statistic
-    defaults: { _controller: ShiftUpTaskBoxxBundle:Statistic:index }
-
-taskboxx_activity_index:
-    pattern: /activity
-    defaults: { _controller: ShiftUpTaskBoxxBundle:Activity:index }
-
 taskboxx_login:
     pattern: /login
     defaults: { _controller: ShiftUpTaskBoxxBundle:Security:login }
@@ -25,6 +17,36 @@ taskboxx_login:
 taskboxx_logout:
     pattern: /logout
     defaults: { _controller: ShiftUpTaskBoxxBundle:Security:logout }
+
+taskboxx_project_list:
+    pattern: /projects
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Project:list }
+
+# Project
+taskboxx_project_board:
+    pattern: /{project}/board
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Board:index }
+
+taskboxx_activity:
+    pattern: /{project}/activity
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Activity:index }
+
+taskboxx_roadmap:
+    pattern: /{project}/roadmap
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Roadmap:index }
+
+taskboxx_issues:
+    pattern: /{project}/issues
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Issues:index }
+
+taskboxx_new_issue:
+    pattern: /{project}/issues/new
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Issues:new }
+    
+taskboxx_settings:
+    pattern: /{project}/settings
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Issues:index }
+
 
 _security_check:
     pattern: /login_check

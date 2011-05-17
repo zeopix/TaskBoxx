@@ -4,7 +4,7 @@ namespace ShiftUp\TaskBoxxBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ActivityController extends Controller
+class RoadmapController extends Controller
 {
     public function indexAction()
     {
@@ -17,7 +17,7 @@ class ActivityController extends Controller
                           ->findOneBy(array('slug' => $request->attributes->get('project')));
         }
         
-        return $this->render('ShiftUpTaskBoxxBundle:Activity:index.html.twig',
+        return $this->render('ShiftUpTaskBoxxBundle:Roadmap:index.html.twig',
                              array('project'=>$project));
     }
 }

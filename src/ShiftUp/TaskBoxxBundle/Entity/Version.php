@@ -25,6 +25,11 @@ class Version
      */
     protected $name;
     /**
+     * @orm:Column(type="date")
+     * @var Date 
+     */
+    protected $dueTo;
+    /**
      * @orm:ManyToOne(targetEntity="Project")
      * @orm:JoinColumn(name="project_id", referencedColumnName="id") 
      * @var ShiftUp\TaskBoxxBundle\Entity\Project 
@@ -59,6 +64,16 @@ class Version
     public function setProject($project)
     {
         $this->project = $project;
+    }
+
+    public function getDueTo()
+    {
+        return $this->dueTo;
+    }
+
+    public function setDueTo($dueTo)
+    {
+        $this->dueTo = $dueTo;
     }
 
 }

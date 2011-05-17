@@ -1,0 +1,22 @@
+<ul>
+    <li>
+        <a class="overview {{ app.request.attributes.get('_route') == 'taskboxx_project_board' ? 'selected' : '' }}" 
+           href="{{ path('taskboxx_project_board', {'project': project.slug}) }}">Board</a>
+    </li>
+    <li>
+        <a class="activity {{ app.request.attributes.get('_route') == 'taskboxx_activity' ? 'selected' : '' }}" 
+           href="{{ path('taskboxx_activity', {'project': project.slug}) }}">Activity</a>
+    </li>
+    <li>
+        <a class="roadmap {{ app.request.attributes.get('_route') == 'taskboxx_roadmap' ? 'selected' : '' }}" 
+           href="{{ path('taskboxx_roadmap', {'project': project.slug}) }}">Roadmap</a>
+    </li>
+    <li>
+        <a class="issues {{ app.request.attributes.get('_route') == 'taskboxx_issues' ? 'selected' : '' }}" 
+           href="{{ path('taskboxx_issues', {'project': project.slug}) }}">Issues</a>
+    </li>
+    <li>
+        <a class="settings {{ app.request.attributes.get('_route') == 'taskboxx_settings' ? 'selected' : '' }}" 
+           href="{{ path('taskboxx_settings', {'project': project.slug}) }}">Settings</a>
+    </li>
+</ul>

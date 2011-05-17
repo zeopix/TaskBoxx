@@ -1,0 +1,48 @@
+{% extends 'ShiftUpTaskBoxxBundle::layout.html.twig' %}
+
+{% block projectname %}{{ project ? '- ' ~ project.name : '' }}{% endblock %}
+    
+{% block mainmenu %}
+    {% if (project) %}
+        {% include 'ShiftUpTaskBoxxBundle::mainmenu.html.twig' %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<h2>Roadmap</h2>
+<div id="roadmap">
+    {% for version in project.versions %}
+        <a name="{{ version.name }}"> </a>
+        <h3 class="icon icon-package">{{ version.name }}</h3>
+        <p>
+            ({{ version.dueTo | date('d.m.Y') }} )
+        </p>
+        <table class="progress" style="width:40em">
+            <tbody>
+                <tr>
+                    <td class="closed" style="width: 40%;" />
+                    <td class="todo" style="width: 60%;" />
+                </tr>
+            </tbody>
+        </table>
+        <p class="progress-info">
+            2 closed (40%), 3 open (60%)
+        </p>
+        <fieldset class="related-issues">
+            <legend>Related tasks</legend>
+            <ul>
+                
+            </ul>
+        </fieldset>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+    <h3>Filter</h3>
+    <h3>Version(s)</h3>
+    {% for version in project.versions %}
+        <a href="#{{ version.name }}">{{ version.name }}</a><br/>
+    {% endfor %}
+{% endblock %}

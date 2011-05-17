@@ -2,6 +2,6 @@
     <option selected="selected">Jump to a project</option>
     <option disabled="disabled">---</option>
     {% for project in projects %}
-        <option value="{{ project.id }}">{{ project.name()}}</option>
+        <option value="{{ path('taskboxx_project_board', {'project': project.slug}) }}">{{ project.name()}}</option>
     {% endfor %}
 </select>

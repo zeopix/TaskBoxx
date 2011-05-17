@@ -29,6 +29,11 @@ class Project
      * @var ArrayCollection $versions 
      */
     protected $versions;
+    /**
+     * @orm:Column(type="string", length="255")
+     * @var String 
+     */
+    protected $slug;
 
     /**
      * Get id
@@ -58,6 +63,16 @@ class Project
     public function setVersions($versions)
     {
         $this->versions = $versions;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
 }
