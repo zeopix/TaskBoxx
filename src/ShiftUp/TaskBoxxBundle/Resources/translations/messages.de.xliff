@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>My account</source>
+                <target>Mein Account</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Sign out</source>
+                <target>Abmelden</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Logged in as</source>
+                <target>Angemeldet als</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Home</source>
+                <target>Startseite</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Projects</source>
+                <target>Projekte</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Board</source>
+                <target>Tafel</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Activity</source>
+                <target>Vorgänge</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Roadmap</source>
+                <target>Roadmap</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Tasks</source>
+                <target>Aufgaben</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Version(s)</source>
+                <target>Version(en)</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Related tasks</source>
+                <target>Zugeordnete Aufgaben</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>%closed% closed (%closed_percent%), %open% open (%open_percent%)</source>
+                <target>%closed% erledigt (%closed_percent%), %open% offen (%open_percent%)</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Jump to a project</source>
+                <target>Springe zu Projekt</target>
+            </trans-unit>
+            
+        </body>
+    </file>
+</xliff>

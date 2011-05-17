@@ -31,6 +31,7 @@ security:
             form_login:   
                 check_path: /login_check
                 login_path: /login
+                success_handler: login_success
             logout:       
                 path:   /logout
                 target: /

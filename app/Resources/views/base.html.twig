@@ -13,23 +13,33 @@
                 <div id="account">
                     {% if app.user %}
                         <ul>
-                            <li><a class="my-account" href="{{ path('taskboxx_account_show') }}">My account</a></li>
-                            <li><a class="logout" href="{{ path('taskboxx_logout') }}">Sign out</a></li>
+                            <li>
+                                <a class="my-account" 
+                                   href="{{ path('taskboxx_account_show') }}">
+                                    {% trans %}My account{% endtrans %}
+                                </a>
+                            </li>
+                            <li>
+                                <a class="logout" 
+                                   href="{{ path('taskboxx_logout') }}">
+                                     {% trans %}Sign out{% endtrans %}
+                                </a>
+                            </li>
                         </ul>
                     {% endif %}
                 </div>
                 
                 {% if app.user %}
                     <div id="loggedas">
-                        Logged in as <a href="">{{ app.user.username }}</a>
+                        {% trans %}Logged in as{% endtrans %} <a href="">{{ app.user.username }}</a>
                     </div>
                 {% endif %}
 
                 <ul>
-                    <li><a href="{{ path('homepage') }}">Home</a></li>
-                    <li><a href="{{ path('taskboxx_project_list') }}">Projects</a></li>
+                    <li><a href="{{ path('homepage') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('taskboxx_project_list') }}">{% trans %}Projects{% endtrans %}</a></li>
                     {% if app.user and is_granted('ROLE_ADMIN') %}
-                        <li><a href="{{ path('taskboxx_admin_index') }}">Administration</a></li>
+                        <li><a href="{{ path('taskboxx_admin_index') }}">{% trans %}Administration{% endtrans %}</a></li>
                     {% endif %}
                 </ul>
             </div>

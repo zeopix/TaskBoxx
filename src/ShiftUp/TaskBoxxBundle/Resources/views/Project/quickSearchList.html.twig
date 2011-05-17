@@ -1,5 +1,5 @@
 <select onchange="if (this.value != '') { window.location = this.value; }">
-    <option selected="selected">Jump to a project</option>
+    <option selected="selected">{% trans %}Jump to a project{% endtrans %}</option>
     <option disabled="disabled">---</option>
     {% for project in projects %}
         <option value="{{ path('taskboxx_project_board', {'project': project.slug}) }}">{{ project.name()}}</option>
