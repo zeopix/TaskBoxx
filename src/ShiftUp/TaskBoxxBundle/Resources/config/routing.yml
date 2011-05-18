@@ -35,17 +35,17 @@ taskboxx_roadmap:
     pattern: /{project}/roadmap
     defaults: { _controller: ShiftUpTaskBoxxBundle:Roadmap:index }
 
-taskboxx_issues:
-    pattern: /{project}/issues
-    defaults: { _controller: ShiftUpTaskBoxxBundle:Issues:index }
+taskboxx_tasks:
+    pattern: /{project}/tasks
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Task:index }
 
 taskboxx_new_issue:
-    pattern: /{project}/issues/new
-    defaults: { _controller: ShiftUpTaskBoxxBundle:Issues:new }
+    pattern: /{project}/task/new
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Task:new }
     
 taskboxx_settings:
     pattern: /{project}/settings
-    defaults: { _controller: ShiftUpTaskBoxxBundle:Issues:index }
+    defaults: { _controller: ShiftUpTaskBoxxBundle:Settings:index }
 
 
 _security_check:

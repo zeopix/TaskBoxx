@@ -1,13 +1,26 @@
 {% for item in column.backlogItems %}
     <div class="board-item-container" style="background-color: {{ item.type.color }}">
         <div class="board-item-header">
-            <div class="board-item-header-owner">
-                <img src="{{ gravatar(app.user.email, 20) }}" title="{{ app.user.username}}" />
-            </div>                
-            <a href="#" title="Kommentare" class="board-item-num-comments">{{ item.comments | length }}</a>
-            <div class="board-item-header-prio prio-{{ item.priority }}">
+            <div class="story-id">
+                <a class="story-details" href="#">{{ item.id }}</a>
+            </div>
+            <div class="story-bubble prio-{{ item.priority }}" title="{% trans %}Story priority{% endtrans %}">
                 {{ item.priority }}
-            </div>  
+            </div>
+            <div class="story-bubble" title="{% trans %}Story size{% endtrans %}">
+                12
+            </div>
+            <div class="story-bubble" title="{% trans %}Story comments{% endtrans %}">
+                <a href="#">{{ item.comments | length }}</a>
+            </div>
+            <div class="story-bubble" title="{% trans %}Due date{% endtrans %}">
+                17.03.2011
+            </div>
+            <div class="story-owner">
+                <img src="{{ gravatar(app.user.email, 24) }}" title="{{ app.user.username}}" />
+            </div>
+            
+            
         </div>
         <div class="board-item-header-title">
             {{ item.name | markdown }}

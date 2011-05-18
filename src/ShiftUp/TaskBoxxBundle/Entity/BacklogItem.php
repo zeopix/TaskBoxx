@@ -19,6 +19,7 @@ class BacklogItem
      * @orm:GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
     /**
      * @orm:Column(type="string", length="1024")
      */

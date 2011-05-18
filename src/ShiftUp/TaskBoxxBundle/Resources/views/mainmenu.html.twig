@@ -19,7 +19,7 @@
     </li>
     <li>
         <a class="issues {{ app.request.attributes.get('_route') == 'taskboxx_issues' ? 'selected' : '' }}" 
-           href="{{ path('taskboxx_issues', {'project': project.slug}) }}">
+           href="{{ path('taskboxx_tasks', {'project': project.slug}) }}">
             {% trans %}Tasks{% endtrans %}
         </a>
     </li>

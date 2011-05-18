@@ -59,8 +59,8 @@
                 <target>Zugeordnete Aufgaben</target>
             </trans-unit>
             <trans-unit id="15">
-                <source>%closed% closed (%closed_percent%), %open% open (%open_percent%)</source>
-                <target>%closed% erledigt (%closed_percent%), %open% offen (%open_percent%)</target>
+                <source>%closed% closed (%closed_percent%%), %open% open (%open_percent%%)</source>
+                <target>%closed% erledigt (%closed_percent%%), %open% offen (%open_percent%%)</target>
             </trans-unit>
             <trans-unit id="16">
                 <source>Description</source>
@@ -69,6 +69,10 @@
             <trans-unit id="17">
                 <source>Jump to a project</source>
                 <target>Springe zu Projekt</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Comments</source>
+                <target>Kommentare</target>
             </trans-unit>
             
         </body>

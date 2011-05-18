@@ -10,7 +10,6 @@ class SecurityController extends Controller
 
     public function securityCheckAction()
     {
-        echo "bla";
         // The security layer will intercept this request
     }
 
