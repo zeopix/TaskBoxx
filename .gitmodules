@@ -1,0 +1,6 @@
+[submodule "vendor/doctrine-migrations"]
+	path = vendor/doctrine-migrations
+	url = git://github.com/doctrine/migrations.git
+[submodule "vendor/symfony/src/Symfony/Bundle/DoctrineMigrationsBundle"]
+	path = vendor/symfony/src/Symfony/Bundle/DoctrineMigrationsBundle
+	url = https://github.com/symfony/DoctrineMigrationsBundle.git
