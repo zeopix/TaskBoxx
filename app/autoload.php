@@ -12,7 +12,7 @@ $loader->registerNamespaces(array(
     'Doctrine'         => __DIR__.'/../vendor/doctrine/lib',
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
-    'ShiftUp'          => __DIR__.'/../src',
+    'TaskBoxx'          => __DIR__.'/../src',
     'Bundle'           => __DIR__.'/../src',
     'Knplabs'           => __DIR__.'/../src/Bundle',
     

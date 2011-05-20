@@ -1,13 +1,13 @@
 security:
     encoders:
-        ShiftUp\TaskboxxBundle\Entity\User: md5
+        Taskboxx\FrontendBundle\Entity\User: md5
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
 
     providers:
         main:
-            entity: { class: ShiftUpTaskBoxxBundle:User, property: username }
+            entity: { class: TaskBoxxFrontendBundle:User, property: username }
         #in_memory:
         #    users:
         #        user:  { password: userpass, roles: [ 'ROLE_USER' ] }

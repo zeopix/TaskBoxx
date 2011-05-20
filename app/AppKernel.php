@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            new ShiftUp\TaskBoxxBundle\ShiftUpTaskBoxxBundle(),
+            new TaskBoxx\FrontendBundle\TaskBoxxFrontendBundle(),
             new Bundle\GravatarBundle\GravatarBundle(),
             new Knplabs\Bundle\MarkdownBundle\KnplabsMarkdownBundle(),
         );

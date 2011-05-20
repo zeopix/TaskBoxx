@@ -62,5 +62,5 @@ knplabs_markdown: ~
 
 services:
     login_success:
-        class: ShiftUp\TaskBoxxBundle\Handler\LoginHandler
+        class: TaskBoxx\FrontendBundle\Handler\LoginHandler
         

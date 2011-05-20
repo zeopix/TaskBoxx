@@ -1,0 +1,15 @@
+{% extends 'TaskBoxxFrontendBundle::layout.html.twig' %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}
+
+{% block projectname %}{{ project ? '- ' ~ project.name : '' }}{% endblock %}
+    
+{% block mainmenu %}
+    {% if (project) %}
+        {% include 'TaskBoxxFrontendBundle::mainmenu.html.twig' %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+<h2>{% trans %}Settings{% endtrans %}</h2>
+{% endblock %}

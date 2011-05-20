@@ -1,2 +1,2 @@
 taskboxx_main:
-    resource: "@ShiftUpTaskBoxxBundle/Resources/config/routing.yml"
+    resource: "@TaskBoxxFrontendBundle/Resources/config/routing.yml"
