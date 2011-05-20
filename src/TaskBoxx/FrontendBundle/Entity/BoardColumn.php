@@ -40,10 +40,10 @@ class BoardColumn
      */
     protected $hardLimitCheck;
     /**
-     * @orm:OneToMany(targetEntity="BacklogItem", mappedBy="boardColumn")
+     * @orm:OneToMany(targetEntity="Task", mappedBy="boardColumn")
      * @var type 
      */
-    protected $backlogItems;
+    protected $tasks;
     /**
      * @orm:Column(type="integer")
      * @var integer $sort_order
@@ -100,14 +100,14 @@ class BoardColumn
         $this->hardLimitCheck = $hardLimitCheck;
     }
 
-    public function getBacklogItems()
+    public function getTasks()
     {
-        return $this->backlogItems;
+        return $this->tasks;
     }
 
-    public function setBacklogItems($backlogItems)
+    public function setTasks($tasks)
     {
-        $this->backlogItems = $backlogItems;
+        $this->tasks = $tasks;
     }
 
     public function getSortOrder()

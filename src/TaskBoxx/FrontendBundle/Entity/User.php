@@ -31,10 +31,10 @@ class User implements UserInterface
      */
     protected $password;
     /**
-     * @orm:OneToMany(targetEntity="BacklogItem", mappedBy="assignedUser")
-     * @var ArrayCollection $backlogItems 
+     * @orm:OneToMany(targetEntity="Task", mappedBy="assignedUser")
+     * @var ArrayCollection $tasks 
      */
-    protected $backlogItems;
+    protected $tasks;
     /**
      * @orm:ManyToMany(targetEntity="Role")
      * @orm:JoinTable(name="user_role",

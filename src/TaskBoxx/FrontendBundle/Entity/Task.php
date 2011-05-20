@@ -3,10 +3,10 @@
 namespace TaskBoxx\FrontendBundle\Entity;
 
 /**
- * @orm:Table(name="tb_backlog_item")
+ * @orm:Table(name="tb_task")
  * @orm:Entity
  */
-class BacklogItem
+class Task
 {
 
     /**
@@ -33,26 +33,26 @@ class BacklogItem
      */
     protected $priority;
     /**
-     * @orm:OneToMany(targetEntity="Comment", mappedBy="backlogItem")
+     * @orm:OneToMany(targetEntity="Comment", mappedBy="task")
      * @var ArrayCollection $comments
      */
     protected $comments;
     /**
-     * @orm:ManyToOne(targetEntity="BacklogItemType")
-     * @orm:JoinColumn(name="item_type_id", referencedColumnName="id")
+     * @orm:ManyToOne(targetEntity="taskType")
+     * @orm:JoinColumn(name="task_type_id", referencedColumnName="id")
      * 
-     * @var TaskBoxx\FrontendBundle\Entity\BackLogItemType $type
+     * @var TaskBoxx\FrontendBundle\Entity\TaskType $type
      */
     protected $type;
     /**
-     * @orm:ManyToOne(targetEntity="BoardColumn", inversedBy="backlogItems")
+     * @orm:ManyToOne(targetEntity="BoardColumn", inversedBy="tasks")
      * @orm:JoinColumn(name="board_column_id", referencedColumnName="id")
      *
      * @var TaskBoxx\FrontendBundle\Entity\BoardColumn $boardColumn 
      */
     protected $boardColumn;
     /**
-     * @orm:ManyToOne(targetEntity="User", inversedBy="backlogItems")
+     * @orm:ManyToOne(targetEntity="User", inversedBy="tasks")
      * @orm:JoinColumn(name="assigned_user_id", referencedColumnName="id")
      *
      * @var TaskBoxx\FrontendBundle\Entity\User $assignedUser 
@@ -72,9 +72,9 @@ class BacklogItem
     /**
      * Set type
      *
-     * @param TaskBoxx\FrontendBundle\Entity\BacklogItemType $type
+     * @param TaskBoxx\FrontendBundle\Entity\TaskType $type
      */
-    public function setType(\TaskBoxx\FrontendBundle\Entity\BacklogItemType $type)
+    public function setType(\TaskBoxx\FrontendBundle\Entity\TaskType $type)
     {
         $this->type = $type;
     }
@@ -82,7 +82,7 @@ class BacklogItem
     /**
      * Get type
      *
-     * @return TaskBoxx\FrontendBundle\Entity\BacklogItemType $type
+     * @return TaskBoxx\FrontendBundle\Entity\TaskType $type
      */
     public function getType()
     {

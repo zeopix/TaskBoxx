@@ -23,10 +23,10 @@ class Comment
      */
     protected $comment;
     /**
-     * @orm:ManyToOne(targetEntity="BacklogItem", inversedBy="comments")
-     * @orm:JoinColumn(name="backlog_item_id", referencedColumnName="id")
+     * @orm:ManyToOne(targetEntity="Task", inversedBy="comments")
+     * @orm:JoinColumn(name="task_id", referencedColumnName="id")
      */
-    protected $backlogItem;
+    protected $task;
 
     /**
      * Get id
@@ -48,13 +48,13 @@ class Comment
         $this->comment = $comment;
     }
 
-    public function getBacklogItem()
+    public function getTask()
     {
-        return $this->backlogItem;
+        return $this->task;
     }
 
-    public function setBacklogItem($backlogItem)
+    public function setTask($task)
     {
-        $this->backlogItem = $backlogItem;
+        $this->task = $task;
     }
 }

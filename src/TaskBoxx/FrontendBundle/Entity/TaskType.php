@@ -3,12 +3,12 @@
 namespace TaskBoxx\FrontendBundle\Entity;
 
 /**
- * TaskBoxx\FrontendBundle\Entity\BacklogItemType
+ * TaskBoxx\FrontendBundle\Entity\TaskType
  *
- * @orm:Table(name="tb_backlog_item_type")
+ * @orm:Table(name="tb_task_type")
  * @orm:Entity
  */
-class BacklogItemType
+class TaskType
 {
 
     /**

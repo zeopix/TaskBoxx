@@ -20,7 +20,7 @@
         </tr>
         <tr>
             {% for column in columns %}
-                <th class="board-column-wip {{ (column.backlogItems | length > column.wipLimit) and column.wipLimit > 0 ? 'exeedsLimit' : '' }}">{{ column.wipLimit == 0 ? 'no limit' : column.wipLimit }}</th>
+                <th class="board-column-wip {{ (column.tasks | length > column.wipLimit) and column.wipLimit > 0 ? 'exeedsLimit' : '' }}">{{ column.wipLimit == 0 ? 'no limit' : column.wipLimit }}</th>
             {% endfor %}
         </tr>
     </thead>

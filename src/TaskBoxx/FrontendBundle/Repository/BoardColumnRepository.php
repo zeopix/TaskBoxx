@@ -16,7 +16,7 @@ class BoardColumnRepository extends EntityRepository
     {
         return $this->_em
              ->createQuery('SELECT c FROM TaskBoxx\FrontendBundle\Entity\BoardColumn c 
-                            LEFT JOIN c.backlogItems i
+                            LEFT JOIN c.tasks i
                             ORDER BY c.sort_order ASC')
              ->getResult();
     }
