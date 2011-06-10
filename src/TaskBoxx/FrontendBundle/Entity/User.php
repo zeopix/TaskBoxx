@@ -5,48 +5,50 @@ namespace TaskBoxx\FrontendBundle\Entity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * @orm:Entity() 
- * @orm:Table(name="tb_user") 
+ * @ORM\Entity() 
+ * @ORM\Table(name="tb_user") 
  */
 class User implements UserInterface
 {
 
     /**
-     * @orm:Id 
-     * @orm:Column(type="integer") 
-     * @orm:GeneratedValue(strategy="IDENTITY") 
+     * @ORM\Id 
+     * @ORM\Column(type="integer") 
+     * @ORM\GeneratedValue(strategy="IDENTITY") 
      */
     protected $id;
     /**
-     * @orm:Column(type="string", length="32", unique=true) 
+     * @ORM\Column(type="string", length="32", unique=true) 
      */
     protected $username;
     /**
-     * @orm:Column(type="string", length="255", unique=true) 
+     * @ORM\Column(type="string", length="255", unique=true) 
      */
     protected $email;
     /**
-     * @orm:Column(type="string", length="128") 
+     * @ORM\Column(type="string", length="128") 
      */
     protected $password;
     /**
-     * @orm:OneToMany(targetEntity="Task", mappedBy="assignedUser")
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="assignedUser")
      * @var ArrayCollection $tasks 
      */
     protected $tasks;
     /**
-     * @orm:ManyToMany(targetEntity="Role")
-     * @orm:JoinTable(name="user_role",
-     *     joinColumns={@orm:JoinColumn(name="user_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@orm:JoinColumn(name="role_id", referencedColumnName="id")}
+     * @ORM\ManyToMany(targetEntity="Role")
+     * @ORM\JoinTable(name="user_role",
+     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
      * )
      *
      * @var ArrayCollection $userRoles
      */
     protected $userRoles;
     /**
-     * @orm:Column(type="string", length="5")
+     * @ORM\Column(type="string", length="5")
      * @var String
      */
     protected $locale;

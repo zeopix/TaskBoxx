@@ -1,11 +1,13 @@
 <?php
 namespace TaskBoxx\FrontendBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * TaskBoxx\FrontendBundle\Entity\Comment
  *
- * @orm:Table(name="tb_comment")
- * @orm:Entity
+ * @ORM\Table(name="tb_comment")
+ * @ORM\Entity
  */
 class Comment
 {
@@ -13,18 +15,18 @@ class Comment
     /**
      * @var integer $id
      *
-     * @orm:Column(name="id", type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      */
     protected $comment;
     /**
-     * @orm:ManyToOne(targetEntity="Task", inversedBy="comments")
-     * @orm:JoinColumn(name="task_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Task", inversedBy="comments")
+     * @ORM\JoinColumn(name="task_id", referencedColumnName="id")
      */
     protected $task;
 

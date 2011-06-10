@@ -2,11 +2,13 @@
 
 namespace TaskBoxx\FrontendBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * TaskBoxx\FrontendBundle\Entity\Version
  *
- * @orm:Table(name="tb_version")
- * @orm:Entity
+ * @ORM\Table(name="tb_version")
+ * @ORM\Entity
  */
 class Version
 {
@@ -14,24 +16,24 @@ class Version
     /**
      * @var integer $id
      *
-     * @orm:Column(name="id", type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * @var string $name 
      */
     protected $name;
     /**
-     * @orm:Column(type="date")
+     * @ORM\Column(type="date")
      * @var Date 
      */
     protected $dueTo;
     /**
-     * @orm:ManyToOne(targetEntity="Project")
-     * @orm:JoinColumn(name="project_id", referencedColumnName="id") 
+     * @ORM\ManyToOne(targetEntity="Project")
+     * @ORM\JoinColumn(name="project_id", referencedColumnName="id") 
      * @var TaskBoxx\FrontendBundle\Entity\Project 
      */
     protected $project;

@@ -1,10 +1,11 @@
 <?php
 
 namespace TaskBoxx\FrontendBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Table(name="tb_task")
- * @orm:Entity
+ * @ORM\Table(name="tb_task")
+ * @ORM\Entity
  */
 class Task
 {
@@ -12,48 +13,48 @@ class Task
     /**
      * @var integer $id
      *
-     * @orm:Column(name="id", type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     
     /**
-     * @orm:Column(type="string", length="1024")
+     * @ORM\Column(type="string", length="1024")
      */
     protected $name;
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * @var string $description
      */
     protected $description;
     /**
-     * @orm:Column(type="integer")
+     * @ORM\Column(type="integer")
      * @var integer $priority
      */
     protected $priority;
     /**
-     * @orm:OneToMany(targetEntity="Comment", mappedBy="task")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="task")
      * @var ArrayCollection $comments
      */
     protected $comments;
     /**
-     * @orm:ManyToOne(targetEntity="taskType")
-     * @orm:JoinColumn(name="task_type_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="taskType")
+     * @ORM\JoinColumn(name="task_type_id", referencedColumnName="id")
      * 
      * @var TaskBoxx\FrontendBundle\Entity\TaskType $type
      */
     protected $type;
     /**
-     * @orm:ManyToOne(targetEntity="BoardColumn", inversedBy="tasks")
-     * @orm:JoinColumn(name="board_column_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="BoardColumn", inversedBy="tasks")
+     * @ORM\JoinColumn(name="board_column_id", referencedColumnName="id")
      *
      * @var TaskBoxx\FrontendBundle\Entity\BoardColumn $boardColumn 
      */
     protected $boardColumn;
     /**
-     * @orm:ManyToOne(targetEntity="User", inversedBy="tasks")
-     * @orm:JoinColumn(name="assigned_user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tasks")
+     * @ORM\JoinColumn(name="assigned_user_id", referencedColumnName="id")
      *
      * @var TaskBoxx\FrontendBundle\Entity\User $assignedUser 
      */

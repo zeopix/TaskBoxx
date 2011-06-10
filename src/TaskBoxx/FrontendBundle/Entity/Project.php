@@ -2,11 +2,13 @@
 
 namespace TaskBoxx\FrontendBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * TaskBoxx\FrontendBundle\Entity\Project
  *
- * @orm:Table(name="tb_project")
- * @orm:Entity
+ * @ORM\Table(name="tb_project")
+ * @ORM\Entity
  */
 class Project
 {
@@ -14,23 +16,23 @@ class Project
     /**
      * @var integer $id
      *
-     * @orm:Column(name="id", type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * @var string $name 
      */
     protected $name;
     /**
-     * @orm:OneToMany(targetEntity="Version", mappedBy="project")
+     * @ORM\OneToMany(targetEntity="Version", mappedBy="project")
      * @var ArrayCollection $versions 
      */
     protected $versions;
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * @var String 
      */
     protected $slug;

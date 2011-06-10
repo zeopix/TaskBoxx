@@ -2,11 +2,13 @@
 
 namespace TaskBoxx\FrontendBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * TaskBoxx\FrontendBundle\Entity\BoardColumn
  *
- * @orm:Table(name="tb_board_column")
- * @orm:Entity(repositoryClass="TaskBoxx\FrontendBundle\Repository\BoardColumnRepository")
+ * @ORM\Table(name="tb_board_column")
+ * @ORM\Entity(repositoryClass="TaskBoxx\FrontendBundle\Repository\BoardColumnRepository")
  */
 class BoardColumn
 {
@@ -14,38 +16,38 @@ class BoardColumn
     /**
      * @var integer $id
      *
-     * @orm:Column(name="id", type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * @var string $name
      */
     protected $name;
     /**
-     * @orm:Column(type="integer")
+     * @ORM\Column(type="integer")
      * @var integer $wipLimit
      */
     protected $wipLimit;
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * @var string $description
      */
     protected $description;
     /**
-     * @orm:Column(type="boolean")
+     * @ORM\Column(type="boolean")
      * @var boolean $hardLimitCheck
      */
     protected $hardLimitCheck;
     /**
-     * @orm:OneToMany(targetEntity="Task", mappedBy="boardColumn")
+     * @ORM\OneToMany(targetEntity="Task", mappedBy="boardColumn")
      * @var type 
      */
     protected $tasks;
     /**
-     * @orm:Column(type="integer")
+     * @ORM\Column(type="integer")
      * @var integer $sort_order
      */
     protected $sort_order;

@@ -1,12 +1,13 @@
 <?php
 
 namespace TaskBoxx\FrontendBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * TaskBoxx\FrontendBundle\Entity\TaskType
  *
- * @orm:Table(name="tb_task_type")
- * @orm:Entity
+ * @ORM\Table(name="tb_task_type")
+ * @ORM\Entity
  */
 class TaskType
 {
@@ -14,19 +15,19 @@ class TaskType
     /**
      * @var integer $id
      *
-     * @orm:Column(name="id", type="integer")
-     * @orm:Id
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * @var string 
      */
     protected $name;
     
     /**
-     * @orm:Column(type="string", length="20")
+     * @ORM\Column(type="string", length="20")
      * @var string 
      */
     protected $color;
