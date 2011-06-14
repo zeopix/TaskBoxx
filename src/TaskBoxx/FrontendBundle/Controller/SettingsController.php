@@ -8,6 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class SettingsController extends Controller
 {
+    /**
+     * @Route("/{project}/settings", name="taskboxx_settings")
+     * @Template("TaskBoxxFrontendBundle:Settings:index.html.twig")
+     */
     public function indexAction()
     {
         $em = $this->get('doctrine.orm.entity_manager');
@@ -19,7 +23,6 @@ class SettingsController extends Controller
                           ->findOneBy(array('slug' => $request->attributes->get('project')));
         }
         
-        return $this->render('TaskBoxxFrontendBundle:Settings:index.html.twig',
-                            array('project'=>$project));
+        return array('project'=>$project);
     }
 }

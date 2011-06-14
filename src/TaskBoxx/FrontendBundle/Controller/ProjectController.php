@@ -17,6 +17,15 @@ class ProjectController extends Controller
         
         return $this->render('TaskBoxxFrontendBundle:Project:quickSearchList.html.twig', array('projects'=>$projects));
     }
+    
+    /**
+     * @Route("/projects", name="taskboxx_project_list")
+     * @Template("TaskBoxxFrontendBundle:Project:list")
+     */
+    public function listAction()
+    {
+        return array();
+    }
 
 }
 

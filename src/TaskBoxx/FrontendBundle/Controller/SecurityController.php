@@ -10,19 +10,25 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class SecurityController extends Controller
 {
 
+    /**
+     * @Route("/login_check", name="_security_check")
+     */
     public function securityCheckAction()
     {
         // The security layer will intercept this request
     }
 
+    /**
+     * @Route("/logout", name="taskboxx_logout")
+     */
     public function logoutAction()
     {
         // The security layer will intercept this request
     }
     
     /**
-     *
-     * @Template() 
+     * @Route("/login", name="taskboxx_login")
+     * @Template("TaskBoxxFrontendBundle:Security:login.html.twig") 
      */
     public function loginAction()
     {

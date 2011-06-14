@@ -8,6 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class ActivityController extends Controller
 {
+    /**
+     * @Route("/{project}/activity", name="taskboxx_activity")
+     * @Template("TaskBoxxFrontendBundle:Activity:index.html.twig")
+     */
     public function indexAction()
     {
         $em = $this->get('doctrine.orm.entity_manager');
@@ -19,7 +23,6 @@ class ActivityController extends Controller
                           ->findOneBy(array('slug' => $request->attributes->get('project')));
         }
         
-        return $this->render('TaskBoxxFrontendBundle:Activity:index.html.twig',
-                             array('project'=>$project));
+        return array('project'=>$project);
     }
 }

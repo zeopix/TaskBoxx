@@ -6,14 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DashboardController extends Controller
+class AccountController extends Controller
 {
     /**
-     * @Route("/dashboard", name="taskboxx_dashboard_index")
-     * @Template("TaskBoxxFrontendBundle:Dashboard:index.html.twig")
+     * @Route("/account/show", name="taskboxx_account_show")
+     * @Template("TaskBoxxFrontendBundle:Account:show.html.twig")
      */
-    public function indexAction()
-    {
+    public function showAction()
+    {        
         return array();
     }
 }

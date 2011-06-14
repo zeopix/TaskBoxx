@@ -8,6 +8,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class BoardController extends Controller
 {
+    /**
+     * @Route("/{project}/board", name="taskboxx_project_board")
+     * @Route("/", name="homepage")
+     * @Template("TaskBoxxFrontendBundle:Board:index.html.twig") 
+     */
     public function indexAction()
     {
         $em = $this->get('doctrine.orm.entity_manager');
@@ -22,11 +27,14 @@ class BoardController extends Controller
         $columns = $em->getRepository('TaskBoxxFrontendBundle:BoardColumn')
                         ->getColumnsInOrder();    
         
-        return $this->render('TaskBoxxFrontendBundle:Board:index.html.twig',
-                                array('columns'=>$columns,
-                                      'project'=>$project));
+        return array('columns'=>$columns, 'project'=>$project);
     }
     
+    /**
+     *
+     * @param type $columnId
+     * @return type 
+     */
     public function showColumnAction($columnId)
     {
         $em = $this->get('doctrine.orm.entity_manager');

@@ -8,6 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class RoadmapController extends Controller
 {
+    /**
+     * @Route("/{project}/roadmap", name="taskboxx_roadmap")
+     * @Template("TaskBoxxFrontendBundle:Roadmap:index.html.twig")
+     */
     public function indexAction()
     {
         $em = $this->get('doctrine.orm.entity_manager');
@@ -19,7 +23,6 @@ class RoadmapController extends Controller
                           ->findOneBy(array('slug' => $request->attributes->get('project')));
         }
         
-        return $this->render('TaskBoxxFrontendBundle:Roadmap:index.html.twig',
-                             array('project'=>$project));
+        return array('project'=>$project);
     }
 }
