@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new TaskBoxx\FrontendBundle\TaskBoxxFrontendBundle(),
             new Bundle\GravatarBundle\GravatarBundle(),
             new Knplabs\Bundle\MarkdownBundle\KnplabsMarkdownBundle(),
+            new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

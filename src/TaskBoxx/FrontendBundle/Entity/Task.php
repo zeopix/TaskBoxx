@@ -38,8 +38,9 @@ class Task
      * @var ArrayCollection $comments
      */
     protected $comments;
+    
     /**
-     * @ORM\ManyToOne(targetEntity="taskType")
+     * @ORM\ManyToOne(targetEntity="TaskType")
      * @ORM\JoinColumn(name="task_type_id", referencedColumnName="id")
      * 
      * @var TaskBoxx\FrontendBundle\Entity\TaskType $type
